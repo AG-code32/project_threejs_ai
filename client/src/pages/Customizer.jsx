@@ -11,6 +11,9 @@ import { fadeAnimation, slideAnimation } from '../config/motion';
 import { AIPicker, ColorPicker, CustomButton, FilePicker, Tab } from '../components';
 
 const Customizer = () => {
+
+  const [statePicker, setStatePicker] = useState(false);
+
   const snap = useSnapshot(state);
 
   const [file, setFile] = useState('');
@@ -131,11 +134,13 @@ const Customizer = () => {
                   <Tab 
                     key={tab.name}
                     tab={tab}
-                    handleClick={() => setActiveEditorTab(tab.name)}
+                    handleClick={() => (setActiveEditorTab(tab.name), setStatePicker(!statePicker))}
                   />
                 ))}
-
-                {generateTabContent()}
+                
+                {/* const [statePicker, setStatePicker] = useState(false); */}
+                {statePicker && generateTabContent()}
+                {/* {generateTabContent()} */}
               </div>
             </div>
           </motion.div>
