@@ -6,8 +6,8 @@ const state = proxy({
   color: '#78A4DA',
   isLogoTexture: true,
   isFullTexture: false,
-  logoDecal: './public/logoGY-black.svg',
-  fullDecal: './public/logoGY-black.svg',
+  logoDecal: './logoGY-black.svg',
+  fullDecal: './logoGY-black.svg',
 });
 
 export default state;
